@@ -12,7 +12,7 @@ include(UseDoxygen OPTIONAL)
 
 add_subdirectory(parsing)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${ParsePDDL_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${ParsePDDL_SOURCE_DIR} "/usr/local/opt/flex/include")
 
 set(libInst_SRCS
       SimpleEval.cpp

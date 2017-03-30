@@ -93,8 +93,8 @@ void PreferenceHandler::buildAutomata()
     
     
     vector<RPGBuilder::Constraint> & prefs = RPGBuilder::getEditablePreferences();
-    const uint prefCount = prefs.size();
-    const uint taskPrefCount = RPGBuilder::getTaskPrefCount();
+    const unsigned int prefCount = prefs.size();
+    const unsigned int taskPrefCount = RPGBuilder::getTaskPrefCount();
     
     if (!prefCount) return;
     
@@ -116,7 +116,7 @@ void PreferenceHandler::buildAutomata()
     initialAutomataPositions.resize(taskPrefCount, AutomatonPosition::unsatisfied);
     initMS.preferenceStatus.resize(taskPrefCount);        
     
-    for (uint p = 0; p < taskPrefCount; ++p) {
+    for (unsigned int p = 0; p < taskPrefCount; ++p) {
         list<NNFPreconditionChooser::Supporters> chosen;
     
         assert(initMS.preferenceStatus.size() > p);
@@ -228,7 +228,7 @@ void PreferenceHandler::buildAutomata()
         }
     }
     
-    for (uint p = taskPrefCount; p < prefCount; ++p) {
+    for (unsigned int p = taskPrefCount; p < prefCount; ++p) {
         automata[p] = new PreconditionPref(p, &(prefs[p]));
     }
     
@@ -3729,7 +3729,7 @@ void PreferenceHandler::collectAllFactsInNNF(const int& pref, const bool& wasThe
 
 bool PreferenceHandler::couldBeBeneficialToOppose(const int & p, const bool & wasTheTrigger)
 {
-    const uint taskPrefCount = RPGBuilder::getTaskPrefCount();
+    const unsigned int taskPrefCount = RPGBuilder::getTaskPrefCount();
     
     if ((size_t) p >= taskPrefCount) {
         // is never a good idea to violate precondition preferences
@@ -3763,7 +3763,7 @@ bool PreferenceHandler::couldBeBeneficialToOppose(const int & p, const bool & wa
 
 bool PreferenceHandler::couldBeBeneficialToSupport(const int & p, const bool & wasTheTrigger)
 {
-    const uint taskPrefCount = RPGBuilder::getTaskPrefCount();
+    const unsigned int taskPrefCount = RPGBuilder::getTaskPrefCount();
     
     if ((size_t) p >= taskPrefCount) {
         // is never a good idea to violate precondition preferences, so always support them

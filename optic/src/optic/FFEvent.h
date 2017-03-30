@@ -37,7 +37,7 @@ namespace Inst {
 using Inst::instantiatedOp;
 
 #include "globals.h"
-
+#include "unistd.h"
 #include <set>
 using std::set;
 

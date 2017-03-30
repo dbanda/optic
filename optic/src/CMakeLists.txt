@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 2.4)
-SET(CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "/usr/local/include")
 if(COMMAND cmake_policy)
     cmake_policy(SET CMP0003 NEW)
 endif(COMMAND cmake_policy)
-
+set(CMAKE_CXX_COMPILER "g++-6")
 project(buildroot)
 
 set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)

@@ -9,8 +9,8 @@ if(NOT EXISTS ${BISON_EXECUTABLE})
 endif(NOT EXISTS ${BISON_EXECUTABLE})
 
 
-FIND_PROGRAM(FLEX_EXECUTABLE flex)
-
+FIND_PROGRAM(FLEX_EXECUTABLE /usr/local/opt/flex/bin/flex)
+message("flex found = " ${FLEX_EXECUTABLE})
 if(NOT EXISTS ${FLEX_EXECUTABLE})
         message("Could not find flex executable.")
 endif(NOT EXISTS ${FLEX_EXECUTABLE})
@@ -39,7 +39,7 @@ add_custom_command(
         ${CMAKE_CURRENT_SOURCE_DIR}/fixyywrap ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} "/usr/local/opt/flex/include" )
 
 set(libParsePDDL_SRCS
       pddl+.cpp ptree.cpp DebugWriteController.cpp

@@ -55,7 +55,7 @@ class PreferenceFSA {
 
 protected:
     
-    uint prefIdx;
+    unsigned int prefIdx;
     string switchVarName;
     RPGBuilder::Constraint * pref;
 

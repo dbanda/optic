@@ -16,15 +16,17 @@ find_package(Cbc)
 find_package(Cgl)
 find_package(OSI)
 find_package(GSL)
-
+message("osi " ${OSI_INCLUDES})
 
 set(CMAKE_CXX_FLAGS "-Wall ${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_COMPILER "/usr/local/bin/g++-6")
+set(CMAKE_C_COMPILER "/usr/local/bin/gcc-6")
 
 if(STATIC_OPTIC)
 set(CMAKE_CXX_LINK_FLAGS "-static ${CMAKE_CXX_LINK_FLAGS}")
 endif(STATIC_OPTIC)
 
-include_directories(${val_SOURCE_DIR} ${val_SOURCE_DIR}/parsing ${val_BINARY_DIR} ${CLP_INCLUDES}/coin ${CBC_INCLUDES}/coin ${CPLEX_INCLUDES} ${CONCERT_INCLUDES}  ${GSL_INCLUDES})
+include_directories(${val_SOURCE_DIR} ${val_SOURCE_DIR}/parsing ${val_BINARY_DIR} ${CGL_INCLUDES}/cgl/coin ${CLP_INCLUDES}/clp/coin ${CBC_INCLUDES}/cbc/coin ${CPLEX_INCLUDES} ${CONCERT_INCLUDES} ${GSL_INCLUDES} ${OSI_INCLUDES}/osi/coin ${COINUTILS_INCLUDES}/coinutils/coin "/usr/local/opt/flex/include" )
 
 set(optic_build_srcs
     compressionsafescheduler.cpp
